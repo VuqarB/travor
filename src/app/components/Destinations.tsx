@@ -1,10 +1,9 @@
-import { Suspense } from "react";
 import Destination from "./ui/Destination";
 import Section from "./ui/Section";
 import Subtitle from "./ui/Subtitle";
 import { DESTINATIONS } from "@/constants";
 
-export default function Destinations() {
+export default async function Destinations() {
   return (
     <Section>
       <div className="max-container">
@@ -35,7 +34,7 @@ export default function Destinations() {
 
         <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 cLg:grid-cols-4 gap-[30px] mt-[45px]">
           {DESTINATIONS.map((data) => (
-              <Destination key={data.title} data={data} />
+            <Destination key={data.title} data={data} />
           ))}
         </div>
       </div>

@@ -8,20 +8,20 @@ datasource db {
 }
 
 model Destination {
-  id                 String              @id @default(uuid()) @map("_id") @db.ObjectId
+  id                 String              @id @default(auto()) @map("_id") @db.ObjectId
   title              String
   location           String
   imgUrl             String
   price              Float
-  avarageRate        Float
+  averageRate        Float
   href               String
   DestinationDetails DestinationDetails?
 }
 
 model DestinationDetails {
-  id            String      @id @default(uuid()) @map("_id") @db.ObjectId
+  id            String      @id @default(auto()) @map("_id") @db.ObjectId
   title         String
-  subtite       String
+  subtitle      String
   trip          Json?
   about         Json?
   basicInfo     Json?
