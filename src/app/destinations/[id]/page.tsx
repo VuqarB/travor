@@ -4,27 +4,28 @@ import Trip from "../components/Trip";
 import BasicInfo from "../components/BasicInfo";
 import Newsletter from "@/app/components/Newsletter";
 import Gallery from "../components/Gallery";
+import { getDestinationDetails } from "../../../../prisma/script";
 
-const page = () => {
+const DestinationDetailsPage = async ({ params }: any) => {
+  const destinationId = params.id;
+  const details = await getDestinationDetails(destinationId);
+  const { title, desc, trip, about, basicInfo, gallery }: any = details;
+
   return (
     <>
-      <HeroWrapper title="Maldives" />
-      <About
-        title="Explore the Beauty of Maldives adventure"
-        subtitle="Maldives Trip"
-        desc="Travor is one of the most popular Travel agency for those explore the world and try to make adventure as well as we can beautiful destination around the world and make you trip you explore the beautiful Maldives with great facilities Travor is one of the most popular Travel agency for those  explore the world and try to make adventure as we provide beautiful destination around the world and make you trip"
-        imgUrl="/destination-maldive-top-image.png"
-      />
+      <HeroWrapper title={title} desc={desc} />
       <Trip
-        title="About Maldives"
-        desc="Travor is one of the most popular Travel agency for those explore the world and try to make adventure as well as we can beautiful destination around the world and make you trip you explore the beautiful Maldives with great facilities Travor is one of the most popular Travel agency for those  explore the world and try to make adventure as we provide beautiful destination around the world and make you trip"
-        imgUrl="/destination-about-image.png"
+        title={`Explore the Beauty of ${title} adventure`}
+        subtitle={`${title} Trip`}
+        desc={trip.desc}
+        imgUrl={trip.imgUrl}
       />
-      <BasicInfo title="Maldives" />
-      <Gallery title="Maldives" />
+      <About title={`About ${title}`} desc={about.desc} imgUrl={about.imgUrl} />
+      <BasicInfo title={title} basicInfo={basicInfo} />
+      <Gallery title={title} gallery={gallery} />
       <Newsletter />
     </>
   );
 };
 
-export default page;
+export default DestinationDetailsPage;

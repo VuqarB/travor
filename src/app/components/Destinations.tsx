@@ -1,9 +1,11 @@
+import { createDestination, getDestinations } from "../../../prisma/script";
 import Destination from "./ui/Destination";
 import Section from "./ui/Section";
 import Subtitle from "./ui/Subtitle";
-import { DESTINATIONS } from "@/constants";
 
 export default async function Destinations() {
+  const destinations = await getDestinations(4);
+
   return (
     <Section>
       <div className="max-container">
@@ -33,8 +35,8 @@ export default async function Destinations() {
         </div>
 
         <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 cLg:grid-cols-4 gap-[30px] mt-[45px]">
-          {DESTINATIONS.slice(0, 4).map((data) => (
-            <Destination key={data.title} data={data} />
+          {destinations.map((data) => (
+            <Destination key={data.title} id={data.id} data={data} />
           ))}
         </div>
       </div>

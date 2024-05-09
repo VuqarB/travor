@@ -7,11 +7,12 @@ import { usePathname } from "next/navigation";
 type HeroWrapperProps = {
   title?: string;
   subtitle?: string;
+  desc?: string;
 };
 
-export default function HeroWrapper({ title, subtitle }: HeroWrapperProps) {
+export default function HeroWrapper({ title, subtitle, desc }: HeroWrapperProps) {
   const pathname = usePathname();
-  const pathnameArr = pathname.split('/');
+  const pathnameArr = pathname.split("/");
 
   return (
     <Section

@@ -2,20 +2,23 @@ import Image from "next/image";
 import Link from "next/link";
 
 type DestinationProps = {
+  id: string;
   data: {
     imgUrl: string;
     title: string;
     averageRate: number;
     location: string;
     price: number;
-    href: string;
   };
 };
 
-export default function Destination({ data }: DestinationProps) {
+export default function Destination({ id, data }: DestinationProps) {
   return (
     <div className="pt-[15px] px-[15px] pb-[30px] rounded-[10px] bg-[#faf8fd] transition-all duration-300 ease-linear destination-item-hover">
-      <Link href={data.href} className="block rounded-[8px] overflow-hidden">
+      <Link
+        href={`/destinations/${id}`}
+        className="block rounded-[8px] overflow-hidden"
+      >
         <Image
           src={data.imgUrl}
           alt="image"
@@ -28,7 +31,7 @@ export default function Destination({ data }: DestinationProps) {
       <div className="flex flex-col mt-2.5">
         <div className="flex-between">
           <Link
-            href={data.href}
+            href={`/destinations/${id}`}
             className="text-[#1f3347] text-[24px] font-bold transition-all duration-300 ease-linear destination-title-hover"
           >
             {data.title}

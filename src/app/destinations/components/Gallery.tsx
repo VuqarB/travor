@@ -1,12 +1,12 @@
 import Image from "next/image";
-import { GALLERY } from "@/constants";
 import Section from "@/app/components/ui/Section";
 
 type Gallery = {
-  title: string;
+  title?: string;
+  gallery: string[];
 };
 
-export default function Gallery({ title }: Gallery) {
+export default function Gallery({ title, gallery }: Gallery) {
   return (
     <Section className="max-container">
       <div className="flex flex-col">
@@ -22,7 +22,7 @@ export default function Gallery({ title }: Gallery) {
         </div>
 
         <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 cLg:grid-cols-4 gap-[30px] mt-10 cLg:mt-[60px]">
-          {GALLERY.map((imgUrl) => (
+          {gallery.map((imgUrl) => (
             <div key={imgUrl} className="rounded-[10px] overflow-hidden">
               <Image
                 src={imgUrl}

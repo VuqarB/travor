@@ -14,17 +14,16 @@ model Destination {
   imgUrl             String
   price              Float
   averageRate        Float
-  href               String
   DestinationDetails DestinationDetails?
 }
 
 model DestinationDetails {
   id            String      @id @default(auto()) @map("_id") @db.ObjectId
   title         String
-  subtitle      String
+  desc          String
   trip          Json?
   about         Json?
-  basicInfo     Json?
+  basicInfo     Json[]
   gallery       String[]
   destination   Destination @relation(fields: [destinationId], references: [id])
   destinationId String      @unique @db.ObjectId

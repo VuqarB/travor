@@ -11,19 +11,10 @@ type TripProps = {
 
 const Trip = ({ title, subtitle, desc, imgUrl }: TripProps) => {
   return (
-    <Section>
+    <Section padding="py-[60px] md:py-[80px] cLg:py-[100px] xl:py-[120px]">
       <div
         className={`max-container flex flex-col-reverse md:flex-row items-center gap-[25px] xl:gap-10`}
       >
-        <div className="flex-1">
-          <Image
-            src={imgUrl}
-            className="object-cover"
-            width={621}
-            height={568}
-            alt={imgUrl}
-          />
-        </div>
         <div className="flex-1 cLg:max-w-[524px] w-full">
           {subtitle && (
             <div className="mb-[26px] text-[#08ac9e] leading-[1] tracking-[.2px]">
@@ -37,6 +28,15 @@ const Trip = ({ title, subtitle, desc, imgUrl }: TripProps) => {
           <div>
             <p className="text-[#595959] mb-[33px]">{desc}</p>
           </div>
+        </div>
+        <div className="flex-1">
+          <Image
+            src={imgUrl}
+            className="object-cover w-full"
+            width={621}
+            height={568}
+            alt={imgUrl}
+          />
         </div>
       </div>
     </Section>

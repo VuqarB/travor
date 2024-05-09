@@ -1,11 +1,16 @@
 import Section from "@/app/components/ui/Section";
-import { BASIC_INFORMATION } from "@/constants";
 
-type BasicInfoProps = {
+type BasicInfoArr = {
   title: string;
+  info: string;
 };
 
-export default function BasicInfo({ title }: BasicInfoProps) {
+type BasicInfoProps = {
+  title?: string;
+  basicInfo: BasicInfoArr[];
+};
+
+export default function BasicInfo({ title, basicInfo }: BasicInfoProps) {
   return (
     <Section className="max-container">
       <div className="flex flex-col">
@@ -22,7 +27,7 @@ export default function BasicInfo({ title }: BasicInfoProps) {
 
         <div className="mt-[30px] md:mt-10 cLg:mt-[50px] py-10 px-10 md:px-[60px] cLg:pt-[54px] cLg:px-[90px] cLg:pb-[46px] rounded-[30px] bg-[#faf8fd]">
           <ul className="flex flex-col gap-y-5">
-            {BASIC_INFORMATION.map((data) => (
+            {basicInfo.map((data) => (
               <li
                 key={data.title}
                 className="flex flex-col cLg:flex-row items-center pb-[17px] gap-x-[29px] md:gap-x-[200px] cLg:gap-x-[320px] gap-y-2.5 border-b border-dashed border-[#a9a9a9] text-center cLg:text-left"
