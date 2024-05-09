@@ -33,7 +33,7 @@ export default async function Destinations() {
         </div>
 
         <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 cLg:grid-cols-4 gap-[30px] mt-[45px]">
-          {DESTINATIONS.map((data) => (
+          {DESTINATIONS.slice(0, 4).map((data) => (
             <Destination key={data.title} data={data} />
           ))}
         </div>

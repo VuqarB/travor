@@ -5,7 +5,7 @@ type DestinationProps = {
   data: {
     imgUrl: string;
     title: string;
-    avarageRate: number;
+    averageRate: number;
     location: string;
     price: number;
     href: string;
@@ -35,7 +35,7 @@ export default function Destination({ data }: DestinationProps) {
           </Link>
           <div className="flex-center gap-[5px]">
             <Image src="/rating.svg" alt="rating" width={12} height={12} />
-            <p className="regular-14 text-[#1f3347]">{data.avarageRate}</p>
+            <p className="regular-14 text-[#1f3347]">{data.averageRate}</p>
           </div>
         </div>
         <div className="flex items-center gap-[5px] mt-[-5px]">
