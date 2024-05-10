@@ -6,7 +6,7 @@ type ButtonProps = {
   children: React.ReactNode;
   green?: boolean;
   translate?: boolean;
-  padding: string;
+  padding?: string;
   onClick?: () => void;
 };
 

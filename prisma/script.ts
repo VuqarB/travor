@@ -61,7 +61,6 @@ export const createDestination = async () => {
       },
     });
 
-
     return destination;
   } catch (error) {
     console.error("Error creating destination:", error);
@@ -109,6 +108,44 @@ export const getDestinationDetails = async (id: string) => {
     });
 
     return details;
+  } catch (error) {
+    console.error("Error fetching destinations:", error);
+    throw error;
+  } finally {
+    await prisma.$disconnect();
+  }
+};
+
+export const createTestimonal = async () => {
+  try {
+    const testimonal = await prisma.testimonal.create({
+      data: {
+        travelerText:
+          "Travor is one of the most popular Travel agency for those who want to explore the wold and try to make adventure as well as we can provide",
+        travelerName: "Jhon Smith",
+        travelerOccupation: "CEO, Singapore",
+      },
+    });
+
+    return testimonal;
+  } catch (error) {
+    console.error("Error fetching destinations:", error);
+    throw error;
+  } finally {
+    await prisma.$disconnect();
+  }
+};
+
+export const getTestimonals = async () => {
+  try {
+    const testimonals = await prisma.testimonal.findMany({
+      select: {
+        travelerName: true,
+        travelerOccupation: true,
+        travelerText: true,
+      },
+    });
+    return testimonals;
   } catch (error) {
     console.error("Error fetching destinations:", error);
     throw error;

@@ -28,3 +28,10 @@ model DestinationDetails {
   destination   Destination @relation(fields: [destinationId], references: [id])
   destinationId String      @unique @db.ObjectId
 }
+
+model Testimonal {
+  id                 String  @id @default(auto()) @map("_id") @db.ObjectId
+  travelerText       String
+  travelerName       String
+  travelerOccupation String?
+}
