@@ -1,4 +1,4 @@
-import { getDestinations } from "../../../prisma/script";
+import { getDestinations } from "../../prisma/script";
 import Destination from "./ui/Destination";
 import Section from "./ui/Section";
 import Subtitle from "./ui/Subtitle";

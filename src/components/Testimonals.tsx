@@ -7,14 +7,13 @@ import useEmblaCarousel from "embla-carousel-react";
 import SliderPrevBtn from "./ui/SliderPrevBtn";
 import SliderNextBtn from "./ui/SliderNextBtn";
 import { useCallback } from "react";
-import TestimonalWrapper from "./ui/TestimonalWrapper";
 
 export default function Testimonals({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [emblaRef, emblaApi] = useEmblaCarousel();
+  const [emblaRef, emblaApi] = useEmblaCarousel({loop: true});
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();

@@ -1,4 +1,4 @@
-import { getTestimonals } from "../../../../prisma/script";
+import { getTestimonals } from "../../../prisma/script";
 import Testimonal from "./Testimonal";
 
 const TestimonalWrapper = async () => {

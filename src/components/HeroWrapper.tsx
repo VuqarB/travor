@@ -10,7 +10,11 @@ type HeroWrapperProps = {
   desc?: string;
 };
 
-export default function HeroWrapper({ title, subtitle, desc }: HeroWrapperProps) {
+export default function HeroWrapper({
+  title,
+  subtitle,
+  desc,
+}: HeroWrapperProps) {
   const pathname = usePathname();
   const pathnameArr = pathname.split("/");
 
@@ -29,8 +33,8 @@ export default function HeroWrapper({ title, subtitle, desc }: HeroWrapperProps)
               {title}
             </h1>
             <p className="max-w-[565px] text-[#494949] text-center">
-              Travor is one of the most popular Travel agency for those who want
-              to explore the world and try to make adventure
+              {!desc &&
+                "Travor is one of the most popular Travel agency for those who want to explore the world and try to make adventure"}
             </p>
           </div>
         </div>

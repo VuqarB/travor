@@ -1,9 +1,9 @@
-import HeroWrapper from "@/app/components/HeroWrapper";
-import About from "../components/About";
-import Trip from "../components/Trip";
-import BasicInfo from "../components/BasicInfo";
-import Newsletter from "@/app/components/Newsletter";
-import Gallery from "../components/Gallery";
+import HeroWrapper from "@/components/HeroWrapper";
+import About from "../(components)/About";
+import Trip from "../(components)/Trip";
+import BasicInfo from "../(components)/BasicInfo";
+import Newsletter from "@/components/Newsletter";
+import Gallery from "../(components)/Gallery";
 import { getDestinationDetails } from "../../../../prisma/script";
 
 const DestinationDetailsPage = async ({ params }: any) => {

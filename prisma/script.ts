@@ -153,3 +153,33 @@ export const getTestimonals = async () => {
     await prisma.$disconnect();
   }
 };
+
+export const createTeamMember = async () => {
+  try {
+    const member = await prisma.team.create({
+      data: {
+        imgUrl: "/team-4.jpg",
+        fullname: "Sara Smith",
+        occupation: "Tour Eductor",
+      },
+    });
+    return member;
+  } catch (error) {
+    console.error("Error fetching destinations:", error);
+    throw error;
+  } finally {
+    await prisma.$disconnect();
+  }
+};
+
+export const getTeam = async () => {
+  try {
+    const member = await prisma.team.findMany();
+    return member;
+  } catch (error) {
+    console.error("Error fetching destinations:", error);
+    throw error;
+  } finally {
+    await prisma.$disconnect();
+  }
+};

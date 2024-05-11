@@ -35,3 +35,10 @@ model Testimonal {
   travelerName       String
   travelerOccupation String?
 }
+
+model Team {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  imgUrl     String @unique
+  fullname   String
+  occupation String @unique
+}

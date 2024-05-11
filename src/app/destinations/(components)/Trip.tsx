@@ -1,4 +1,4 @@
-import Section from "@/app/components/ui/Section";
+import Section from "@/components/ui/Section";
 import Image from "next/image";
 import React from "react";
 

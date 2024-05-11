@@ -1,4 +1,4 @@
-import Section from "@/app/components/ui/Section";
+import Section from "@/components/ui/Section";
 
 type BasicInfoArr = {
   title: string;
