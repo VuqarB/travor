@@ -83,3 +83,53 @@ export const FOOTER_SUPPORT: Footerlink[] = [
   "Change Log",
   "Licenses",
 ];
+
+export const FILTER_TYPES: Filter[] = [
+  {
+    value: "Adventure",
+    label: "Adventure",
+  },
+  {
+    value: "Beaches",
+    label: "Beaches",
+  },
+  {
+    value: "City Tour",
+    label: "City Tour",
+  },
+  {
+    value: "Hiking",
+    label: "Hiking",
+  },
+  {
+    value: "Honeymoon",
+    label: "Honeymoon",
+  },
+  {
+    value: "Museum Tour",
+    label: "Museum Tour",
+  },
+];
+
+export const FILTER_GUESTS: Filter[] = [
+  {
+    value: "01 Person",
+    label: "01 Person",
+  },
+  {
+    value: "02 Person",
+    label: "02 Person",
+  },
+  {
+    value: "03 Person",
+    label: "03 Person",
+  },
+  {
+    value: "04 Person",
+    label: "04 Person",
+  },
+  {
+    value: "05 Person",
+    label: "05 Person",
+  },
+];
