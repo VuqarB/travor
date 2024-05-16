@@ -1,5 +1,6 @@
 import Button from "@/components/ui/Button";
 import Section from "@/components/ui/Section";
+import { signIn } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -33,13 +34,13 @@ export default function Login() {
                 type="email"
                 placeholder="Email*"
                 className="h-[50px] xs:h-[60px] w-full block py-3 px-5 border border-[#696969] rounded-[200px] bg-transparent regular-14 leading-[1.43] text-[#595959] outline-none transition-all duration-300 ease-linear focus:border-[#ff621f]"
-                required
+                // required
               />
               <input
                 type="password"
                 placeholder="Password*"
                 className="h-[50px] xs:h-[60px] w-full block py-3 px-5 border border-[#696969] rounded-[200px] bg-transparent regular-14 leading-[1.43] text-[#595959] outline-none transition-all duration-300 ease-linear focus:border-[#ff621f]"
-                required
+                // required
               />
 
               <div className="flex-between -mt-5">
@@ -59,6 +60,7 @@ export default function Login() {
               <Button padding="py-[7px] xs:py-[15px] px-5 md:px-[25px]">
                 Submit
               </Button>
+
               <div className="my-[27px] text-center text-[#595959] leading-[1.77] tracking-[.2px]">
                 Already have an account?
               </div>
