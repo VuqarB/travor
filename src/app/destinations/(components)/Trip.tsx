@@ -13,7 +13,7 @@ const Trip = ({ title, subtitle, desc, imgUrl }: TripProps) => {
   return (
     <Section padding="py-[60px] md:py-[80px] cLg:py-[100px] xl:py-[120px]">
       <div
-        className={`max-container flex flex-col-reverse md:flex-row items-center gap-[25px] xl:gap-10`}
+        className="max-container flex flex-col-reverse md:flex-row items-center gap-[25px] xl:gap-10"
       >
         <div className="flex-1 cLg:max-w-[524px] w-full">
           {subtitle && (

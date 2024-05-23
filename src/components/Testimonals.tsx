@@ -13,7 +13,7 @@ export default function Testimonals({
 }: {
   children: React.ReactNode;
 }) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({loop: true});
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();

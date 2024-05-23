@@ -63,20 +63,20 @@ export const NAV_LINKS: Navlink[] = [
   },
 ];
 
-export const FOOTER_SOCIALS: Footerlink[] = [
+export const FOOTER_SOCIALS: string[] = [
   "/facebook.svg",
   "/twitter.svg",
   "/instagram.svg",
 ];
 
-export const FOOTER_INFORMATION: Footerlink[] = [
+export const FOOTER_INFORMATION: string[] = [
   "About",
   "Destination",
   "Package",
   "Our Blogs",
   "Contacts",
 ];
-export const FOOTER_SUPPORT: Footerlink[] = [
+export const FOOTER_SUPPORT: string[] = [
   "Login",
   "Signup",
   "Style Guide",
@@ -84,7 +84,7 @@ export const FOOTER_SUPPORT: Footerlink[] = [
   "Licenses",
 ];
 
-export const FILTER_TYPES: Filter[] = [
+export const FILTER_TYPES: Filter[] = [ 
   {
     value: "Adventure",
     label: "Adventure",

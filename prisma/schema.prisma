@@ -44,34 +44,24 @@ model Team {
 }
 
 model Package {
-  id               String          @id @default(auto()) @map("_id") @db.ObjectId
-  title            String
-  duration         String
-  averageRate      Float
-  imgUrl           String
-  PackageDetails   PackageDetails? @relation(fields: [packageDetailsId], references: [id])
-  DetailsGallery   DetailsGallery? @relation(fields: [detailsGalleryId], references: [id])
-  detailsGalleryId String?         @db.ObjectId
-  packageDetailsId String?         @db.ObjectId
+  id             String          @id @default(auto()) @map("_id") @db.ObjectId
+  title          String
+  duration       String
+  averageRate    Float
+  price          Float
+  imgUrl         String
+  PackageDetails PackageDetails?
 }
 
 model PackageDetails {
-  id             String           @id @default(auto()) @map("_id") @db.ObjectId
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
   desc           String
-  exploreDesc    String
+  explore        Json
   packageDetails Json
-  basicInfo      Json
-  services       Json[]
+  basicInfo      Json[]
+  services       Json
   tourPlan       Json[]
-  gallery        DetailsGallery[]
-  packageId      String           @unique @db.ObjectId
-  Package        Package[]
-}
-
-model DetailsGallery {
-  id               String          @id @default(auto()) @map("_id") @db.ObjectId
-  imgUrls          String[]
-  packageDetailsId String?         @db.ObjectId
-  PackageDetails   PackageDetails? @relation(fields: [packageDetailsId], references: [id])
-  Package          Package[]
+  gallery        String[]
+  packageId      String   @unique @db.ObjectId
+  package        Package  @relation(fields: [packageId], references: [id])
 }

@@ -19,5 +19,3 @@ interface Filter {
   value: string;
   label: string;
 }
-
-type Footerlink = string;

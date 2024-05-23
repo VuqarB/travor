@@ -36,7 +36,7 @@ export default async function Destinations() {
 
         <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 cLg:grid-cols-4 gap-[30px] mt-[45px]">
           {destinations.map((data) => (
-            <Destination key={data.title} id={data.id} data={data} />
+            <Destination key={data.title} data={data} />
           ))}
         </div>
       </div>

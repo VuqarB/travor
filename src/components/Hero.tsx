@@ -68,7 +68,7 @@ export default function Hero() {
           </div>
         </>
       </Section>
-      <Section className="relative z-50 mt-10 cLg:mt-[-66px]">
+      <Section className="relative z-50 mt-10 cLg:mt-[-66px]" padding="p-0">
         <Filter />
       </Section>
     </>

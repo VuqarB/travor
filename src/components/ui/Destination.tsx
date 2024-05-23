@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 type DestinationProps = {
-  id: string;
   data: {
+    id: string;
     imgUrl: string;
     title: string;
     averageRate: number;
@@ -12,11 +12,11 @@ type DestinationProps = {
   };
 };
 
-export default function Destination({ id, data }: DestinationProps) {
+export default function Destination({ data }: DestinationProps) {
   return (
     <div className="pt-[15px] px-[15px] pb-[30px] rounded-[10px] bg-[#faf8fd] transition-all duration-300 ease-linear destination-item-hover">
       <Link
-        href={`/destinations/${id}`}
+        href={`/destinations/${data.id}`}
         className="block rounded-[8px] overflow-hidden"
       >
         <Image
@@ -31,14 +31,14 @@ export default function Destination({ id, data }: DestinationProps) {
       <div className="flex flex-col mt-2.5">
         <div className="flex-between">
           <Link
-            href={`/destinations/${id}`}
+            href={`/destinations/${data.id}`}
             className="text-[#1f3347] text-[24px] font-bold transition-all duration-300 ease-linear destination-title-hover"
           >
             {data.title}
           </Link>
           <div className="flex-center gap-[5px]">
             <Image src="/rating.svg" alt="rating" width={12} height={12} />
-            <p className="regular-14 text-[#1f3347]">{data.averageRate}</p>
+            <span className="regular-14 text-[#1f3347]">{data.averageRate}</span>
           </div>
         </div>
         <div className="flex items-center gap-[5px] mt-[-5px]">

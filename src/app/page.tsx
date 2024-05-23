@@ -6,6 +6,8 @@ import Services from "../components/Services";
 import Testimonals from "../components/Testimonals";
 import Welcome from "../components/Welcome";
 import TestimonalWrapper from "../components/ui/TestimonalWrapper";
+import Packages from "@/components/Packages";
+import PackagesWrapper from "@/components/ui/PackagesWrapper";
 
 export default function Home() {
   return (
@@ -13,8 +15,11 @@ export default function Home() {
       <Hero />
       <Services />
       <Destinations />
-      <Discount />
       <Welcome />
+      <Packages>
+        <PackagesWrapper />
+      </Packages>
+      <Discount />
       <Testimonals>
         <TestimonalWrapper />
       </Testimonals>
